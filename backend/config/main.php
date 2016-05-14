@@ -11,11 +11,17 @@ return [
     'basePath' => dirname(__DIR__),
     'controllerNamespace' => 'backend\controllers',
     'bootstrap' => ['log'],
-    'modules' => [],
+    'modules' => [
+    	'site' => [
+    		'class' => 'app\modules\site\Module',
+    	],
+    ],
     'components' => [
+    	
         'user' => [
             'identityClass' => 'common\models\User',
             'enableAutoLogin' => true,
+            'loginUrl' => ['/site/auth/login'],
         ],
         'request' => [
         // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
@@ -40,6 +46,16 @@ return [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
+       /* 'view' => [
+	        'theme' => [
+		        'pathMap' => [
+			        '@app/views' => '@backend',
+			        '@app/modules' => '@backend/views/modules',
+		        ],
+		        
+	        ],
+        
+        ],*/
         /*
         'urlManager' => [
             'enablePrettyUrl' => true,

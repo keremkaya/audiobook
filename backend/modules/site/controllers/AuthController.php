@@ -1,5 +1,5 @@
 <?php
-namespace backend\controllers;
+namespace app\modules\site\controllers;
 
 use Yii;
 use yii\filters\AccessControl;
@@ -10,7 +10,7 @@ use yii\filters\VerbFilter;
 /**
  * Site controller
  */
-class SiteController extends Controller
+class AuthController extends Controller
 {
     /**
      * @inheritdoc
@@ -35,7 +35,7 @@ class SiteController extends Controller
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
-                    'logout' => ['post'],
+                 
                 ],
             ],
         ];
@@ -60,6 +60,8 @@ class SiteController extends Controller
 
     public function actionLogin()
     {
+    	Yii::$app->layout = 'login';
+    	
         if (!\Yii::$app->user->isGuest) {
             return $this->goHome();
         }
