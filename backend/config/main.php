@@ -15,6 +15,13 @@ return [
     	'site' => [
     		'class' => 'app\modules\site\Module',
     	],
+    	'user' => [
+    		 'class' => 'app\modules\user\Module',
+    	],
+    	'manage' => [
+    		 'class' => 'app\modules\manage\Module',
+    	],
+    	
     ],
     'components' => [
     	
