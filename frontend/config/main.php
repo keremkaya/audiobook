@@ -15,6 +15,9 @@ return [
     	'site' => [
     		'class' => 'app\modules\site\Module',
     	],
+		'forum' => [
+    		 'class' => 'ibrahim4593\forum\Module',
+    	],
     ],
     'components' => [
         'user' => [
@@ -41,7 +44,7 @@ return [
         	'showScriptName' => false,
         ],
         'errorHandler' => [
-            'errorAction' => 'site/error',
+            'errorAction' => 'forum/default/error',
         ],
         /*
         'urlManager' => [

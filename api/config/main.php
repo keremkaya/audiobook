@@ -15,7 +15,11 @@ $config = [
         'v1' => [
             'basePath' => '@app/modules/v1',
             'class' => 'api\modules\v1\Module'   // here is our v1 modules
-        ]
+        ],
+		'forum' => [
+    		 'class' => 'ibrahim4593\forum\Module',
+    	],
+		
     ],
     'components' => [
         'user' => [
@@ -53,37 +57,14 @@ $config = [
 						],				
 	            	'tokens' => ['{id}' => '<id:\\w+>']
 				],
-				[
-				'class' => 'yii\rest\UrlRule',
-				'controller' => [
-					'v1/user',
-	            	'v1/formelement',
-	            	'v1/form',
-	            	'v1/formrecord',
-	            	'v1/formdata',
-				],
-				'extraPatterns'=>[
-					'GET sample' => 'getsamples',
-					'POST get-element-value' => 'get-element-value',
-					'GET get-form-search-element' => 'get-form-search-element',
-					'POST get-form-records' => 'get-form-records',
-					'POST update-element-value' => 'update-element-value',
-					'GET get-child-forms' => 'get-child-forms',
-					'POST form-control' => 'form-control',
-					'GET send-form-to-role' => 'send-form-to-role',
-					'GET get-form-records-to-role' => 'get-form-records-to-role',
-					'POST child-form-create' => 'child-form-create',
-					'POST flow-up' => 'flow-up',
-					'POST file-upload' => 'file-upload',
-					'GET  file-download' => 'file-download',
-					'GET  get-roles' => 'get-roles',
-					'POST  test' => 'test',
-						],
-				],
+				 
             ]  
         ]
+            		
+        		
     ],
     'params' => $params,
+        	
 ];
 
 if (!YII_ENV_TEST) {

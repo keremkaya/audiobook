@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "a4a47f5d7eb50e212f44c61422f3a2e0",
-    "content-hash": "e1929a97e872bdbaacc8530468eccb67",
+    "hash": "745eb6f91f55ae02382e3ce67538491b",
+    "content-hash": "14f256327e5548cceb083625e753bea5",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
@@ -58,16 +58,16 @@
         },
         {
             "name": "bower-asset/jquery",
-            "version": "2.2.3",
+            "version": "2.2.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jquery/jquery-dist.git",
-                "reference": "af22a351b2ea5801ffb1695abb3bb34d5bed9198"
+                "reference": "c0185ab7c75aab88762c5aae780b9d83b80eda72"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jquery/jquery-dist/zipball/af22a351b2ea5801ffb1695abb3bb34d5bed9198",
-                "reference": "af22a351b2ea5801ffb1695abb3bb34d5bed9198",
+                "url": "https://api.github.com/repos/jquery/jquery-dist/zipball/c0185ab7c75aab88762c5aae780b9d83b80eda72",
+                "reference": "c0185ab7c75aab88762c5aae780b9d83b80eda72",
                 "shasum": ""
             },
             "type": "bower-asset-library",
@@ -671,6 +671,47 @@
             "time": "2016-04-29 12:21:54"
         },
         {
+            "name": "ibrahim4593/forum",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ibrahim4593/benzetim_forum.git",
+                "reference": "6b8808dd6ee9d749d16173824fa9c164131151c1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ibrahim4593/benzetim_forum/zipball/6b8808dd6ee9d749d16173824fa9c164131151c1",
+                "reference": "6b8808dd6ee9d749d16173824fa9c164131151c1",
+                "shasum": ""
+            },
+            "require": {
+                "yiisoft/yii2": "*"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "ibrahim4593\\forum\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Ibrahim ASIK",
+                    "email": "120202035@kocaeli.edu.tr"
+                }
+            ],
+            "description": "The Content module for Yii framework.",
+            "keywords": [
+                "blog",
+                "yii 2",
+                "yii2"
+            ],
+            "time": "2016-05-24 19:49:40"
+        },
+        {
             "name": "phpspec/php-diff",
             "version": "v1.1.0",
             "source": {
@@ -903,7 +944,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "ibrahim4593/forum": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

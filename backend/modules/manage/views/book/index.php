@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
+use app\modules\manage\models\Author;
 
 /* @var $this yii\web\View */
 /* @var $searchModel app\modules\manage\models\BookSearch */
@@ -34,7 +35,7 @@ $this->params['breadcrumbs'][] = $this->title;
             // 'book_rating',
             // 'book_duration',
             // 'book_price',
-            // 'author_id',
+            'author.author_name',
             // 'book_picture:ntext',
 
             ['class' => 'yii\grid\ActionColumn'],

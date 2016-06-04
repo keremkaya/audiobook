@@ -21,6 +21,9 @@ return [
     	'manage' => [
     		 'class' => 'app\modules\manage\Module',
     	],
+		'forum' => [
+    		 'class' => 'ibrahim4593\forum\Module',
+    	],
     	
     ],
     'components' => [
