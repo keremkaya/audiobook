@@ -1,10 +1,10 @@
 <?php
 
-namespace app\modules\manage\controllers;
+namespace backend\modules\manage\controllers;
 
 use Yii;
-use app\modules\manage\models\Author;
-use app\modules\manage\models\AuthorSearch;
+use backend\modules\manage\models\Author;
+use backend\modules\manage\models\AuthorSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;

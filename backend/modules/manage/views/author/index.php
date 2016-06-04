@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
+use backend\modules\metronic\widgets\Portlet;
 
 /* @var $this yii\web\View */
 /* @var $searchModel app\modules\author\models\AuthorSearch */
@@ -18,18 +19,24 @@ $this->params['breadcrumbs'][] = $this->title;
     <p>
         <?= Html::a('Create Author', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
-    <?= GridView::widget([
-        'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
-        'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
+    
+    <?php Portlet::begin(['icon' => 'fa fa-bell-o','title' => 'Title Portlet',]);?>
 
-            'author_id',
-            'author_name',
-            'author_info_details:ntext',
-            'author_picture:ntext',
 
-            ['class' => 'yii\grid\ActionColumn'],
-        ],
-    ]); ?>
+   
+   <?= GridView::widget([
+	'dataProvider' => $dataProvider,
+	'filterModel' => $searchModel,
+	'id'=> 'userGrid',
+	'columns' => [
+		['class' => 'yii\grid\CheckBoxColumn'],
+		'id',
+            'name',
+            'info',
+		['class' => 'backend\modules\metronic\widgets\ActionColumn'],
+		 
+	],
+]);?>
+<?php Portlet::end([]);?>
+    
 </div>

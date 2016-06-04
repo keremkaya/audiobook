@@ -1,6 +1,6 @@
 <?php
 
-namespace app\modules\manage\models;
+namespace backend\modules\manage\models;
 
 use Yii;
 use yii\base\Model;
@@ -18,8 +18,8 @@ class AuthorSearch extends Author
     public function rules()
     {
         return [
-            [['author_id'], 'integer'],
-            [['author_name', 'author_info_details', 'author_picture'], 'safe'],
+            [['id'], 'integer'],
+            [['name', 'info'], 'safe'],
         ];
     }
 
@@ -59,12 +59,11 @@ class AuthorSearch extends Author
 
         // grid filtering conditions
         $query->andFilterWhere([
-            'author_id' => $this->author_id,
+            'id' => $this->id,
         ]);
 
-        $query->andFilterWhere(['like', 'author_name', $this->author_name])
-            ->andFilterWhere(['like', 'author_info_details', $this->author_info_details])
-            ->andFilterWhere(['like', 'author_picture', $this->author_picture]);
+        $query->andFilterWhere(['like', 'name', $this->id])
+            ->andFilterWhere(['like', 'info', $this->info]);
 
         return $dataProvider;
     }

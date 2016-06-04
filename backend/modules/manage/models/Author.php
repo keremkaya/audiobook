@@ -1,30 +1,24 @@
 <?php
 
-namespace app\modules\manage\models;
+namespace backend\modules\manage\models;
 
 use Yii;
-use yii\web\UploadedFile;
 
 /**
  * This is the model class for table "author".
  *
- * @property integer $author_id
- * @property string $author_name
- * @property string $author_info_details
- * @property string $author_picture
+ * @property integer $id
+ * @property string $name
+ * @property string $info
+ * @property string $picture
  *
  * @property Book[] $books
- * 
  */
-
-
 class Author extends \yii\db\ActiveRecord
 {
     /**
      * @inheritdoc
      */
-	public $imagefile;
-	
     public static function tableName()
     {
         return 'author';
@@ -36,22 +30,22 @@ class Author extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['author_name', 'author_info_details'], 'required'],
-            [['author_info_details', 'author_picture'], 'string'],
-            [['author_name'], 'string', 'max' => 55],
-        	[['imagefile'], 'file', 'skipOnEmpty' => false, 'extensions' => 'png, jpg'],
+            [['name'], 'required'],
+            [['info', 'picture'], 'string'],
+            [['name'], 'string', 'max' => 255],
         ];
     }
-        /**
+
+    /**
      * @inheritdoc
      */
     public function attributeLabels()
     {
         return [
-            'author_id' => 'Author ID',
-            'author_name' => 'Author Name',
-            'author_info_details' => 'Author Info Details',
-            'author_picture' => 'Author Picture',
+            'id' => 'ID',
+            'name' => 'Name',
+            'info' => 'Info',
+            'picture' => 'Picture',
         ];
     }
 
@@ -60,23 +54,6 @@ class Author extends \yii\db\ActiveRecord
      */
     public function getBooks()
     {
-        return $this->hasMany(Book::className(), ['author_id' => 'author_id']);
+        return $this->hasMany(Book::className(), ['author_id' => 'id']);
     }
-    
-    public function upload()
-    {
-    	if ($this->validate()) {
-    		$datafolderpath = Yii::getAlias ( '@data' );
-    		$imagename = Yii::$app->security->generateRandomString(10).".".$this->imagefile->extension;
-    		$imagepath = $datafolderpath."/".$imagename;
-    		
-    		$this->imagefile->saveAs($imagepath,false);
-    		$this->author_picture = "data/".$imagename;
-    		return true;
-    	} else {
-    		return false;
-    	}
-    }
-    
-    
 }

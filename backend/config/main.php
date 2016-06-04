@@ -54,7 +54,7 @@ return [
             ],
         ],
         'errorHandler' => [
-            'errorAction' => 'site/error',
+            'errorAction' => 'site/default/error',
         ],
        /* 'view' => [
 	        'theme' => [
